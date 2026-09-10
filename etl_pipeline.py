@@ -7,22 +7,6 @@ import os
 
 
 class ReceiptETL:
-    """
-    Handles the complete ETL process for receipt data:
-    1. Extract: Use Gemini to extract structured data from receipt images
-    2. Transform: Validate and clean the extracted data
-    3. Load: Store in SQLite database
-    """
-    
-    # PROMPT ENGINEERING STRATEGY:
-    # This prompt uses several advanced techniques:
-    # 1. Role Assignment: "You are an expert financial data extraction assistant"
-    # 2. Output Format Specification: Strict JSON schema with examples
-    # 3. Few-shot Learning: Examples of expected behavior
-    # 4. Edge Case Handling: Instructions for missing data, ambiguous dates
-    # 5. Chain-of-Thought: Asks model to classify category based on items
-    # 6. Constraints: "CRITICAL" and "MUST" keywords for non-negotiable requirements
-    
     GEMINI_SYSTEM_PROMPT = """You are an expert financial data extraction assistant specializing in receipt processing.
 
 Your task is to analyze receipt images and extract structured financial data with high accuracy.
