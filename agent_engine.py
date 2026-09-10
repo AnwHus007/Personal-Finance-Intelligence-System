@@ -8,7 +8,7 @@ from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.tools import create_retriever_tool
 from langchain_community.utilities import SQLDatabase
 from langchain_community.tools.sql_database.tool import QuerySQLDataBaseTool, InfoSQLDatabaseTool
-# --- 1. RAG Tool Setup ---
+
 def build_rag_tool(api_key, doc_path="budget_policy.txt"):
     """Ingests a text document, chunks it, and creates a FAISS retriever tool."""
     
@@ -28,7 +28,7 @@ def build_rag_tool(api_key, doc_path="budget_policy.txt"):
         "search_budget_policy",
         "Searches and returns information regarding personal budgeting rules and limits."
     )
-# --- 2. Agent Orchestration ---
+    
 def build_financial_agent(api_key, db_path="finance.db"):
     """Creates an agent equipped with SQL and RAG tools."""
     llm = ChatGoogleGenerativeAI(model="gemini-2.5-flash", google_api_key=api_key, temperature=0)
