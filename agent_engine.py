@@ -18,7 +18,7 @@ def build_rag_tool(api_key, doc_path="budget_policy.txt"):
             f.write("Personal Budget Policy: Dining budget is strictly ₹15,000 per month. Groceries should be kept under ₹20,000. Entertainment limit is ₹5,000.")
             
     loader = TextLoader(doc_path, encoding="utf-8")
-    splits = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50).split_documents(loader.load())
+    splits = RecursiveCharacterTextSplitter(chunk_size=100, chunk_overlap=10).split_documents(loader.load())
     
     embeddings = GoogleGenerativeAIEmbeddings(model="models/gemini-embedding-001", google_api_key=api_key)
     vectorstore = FAISS.from_documents(splits, embeddings)
