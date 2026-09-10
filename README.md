@@ -1,1 +1,1 @@
-# 💰 Smart Personal Finance Intelligence System
+# Smart Personal Finance Intelligence System
