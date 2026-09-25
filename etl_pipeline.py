@@ -46,7 +46,7 @@ Date:
 Total Amount:
 - Extract the final total (after tax, tips, discounts)
 - Look for keywords: "Total", "Amount Due", "Balance", "Grand Total"
-- Return as float (e.g., 45.99, not "$45.99")
+- Return as float (e.g., 45.99, not in any currency format)
 - If multiple totals exist, use the largest
 
 Line Items:
